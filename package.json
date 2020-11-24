@@ -1,11 +1,21 @@
 {
-  "name": "i-notify",
+  "name": "idea-notify",
   "version": "0.0.1",
   "description": "Helps to show the build version of the service and more...",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "es6-promise": "^4.1.0"
+  },
+  "keywords": [
+    "slack",
+    "jest",
+    "coverage",
+    "istanbul",
+    "git"
+  ],
   "author": "inerc",
-  "license": "ISC"
+  "license": "MIT"
 }
