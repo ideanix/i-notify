@@ -1,0 +1,11 @@
+{
+  "name": "i-notify",
+  "version": "0.0.1",
+  "description": "Helps to show the build version of the service and more...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "inerc",
+  "license": "ISC"
+}
