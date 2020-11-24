@@ -22,14 +22,17 @@ class CommitInfo {
      */
     static gitCommand() {
         const gitFormat = ["%h", "%H", "%cr", "%f", "%an", "%ae", "%d"].join("$$$");
-        return `git log -1 --no-color --decorate=short --pretty=format:'${gitFormat}' HEAD`;
+        return `git describe --tags --abbrev=0 && git branch --show-current && git log -1 --no-color --decorate=short --pretty=format:'${gitFormat}' HEAD`;
     }
 
     static formatToJson(data) {
         const gitData = data.split("$$$");
+        const [ currentTag, currentBranch, shortRevision ] = gitData[0].split("\n")
         const refsFixed = this.fixGitRefs(gitData[6]);
         return {
-            "shortRevision": gitData[0],
+            "shortRevision": shortRevision,
+            "currentTag": currentTag,
+            "currentBranch": currentBranch,
             "revision": gitData[1],
             "date": gitData[2],
             "subject": gitData[3],
